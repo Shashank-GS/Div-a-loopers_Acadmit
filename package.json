@@ -1,0 +1,28 @@
+{
+  "name": "div-a-loopers_app",
+  "version": "1.0.0",
+  "description": "Website which helps all the students who wish to take admission in their desired college by sitting in the comfort of their respective homes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shashank-GS/Div-a-loopers_app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shashank-GS/Div-a-loopers_app/issues"
+  },
+  "homepage": "https://github.com/Shashank-GS/Div-a-loopers_app#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
