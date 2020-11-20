@@ -6,7 +6,7 @@
       <div class="inputgrid">
         <div class="first">
           <label for="UGprogram">Enter UG program</label><br />
-          <select name="UGprogram" v-model="UGprogram" id="UGprogram">
+          <select name="UGprogram" v-model="form.UGprogram" class="UGprogram">
             <option value="BE">BE</option>
             <option value="MBBS">MBBS</option>
             <option value="BSci">BSci</option>
@@ -15,8 +15,7 @@
         </div>
         <div class="second">
           <label for="Exam">Enter Exam Answered</label><br />
-
-          <select name="Exam" v-model="Exam" id="Exam">
+          <select name="Exam" v-model="form.Exam" id="Exam">
             <option value="GCET">GCET</option>
             <option value="NEET">NEET</option>
             <option value="JEEmains">JEE mains</option>
@@ -25,7 +24,12 @@
         </div>
         <div class="">
           <label for="Rank">Enter Rank</label><br />
-          <input type="number" v-model="rank" />
+          <input
+            id="Rank"
+            type="numb
+          er"
+            v-model="form.rank"
+          />
         </div>
       </div>
     </div>
@@ -42,6 +46,15 @@ export default {
   components: {
     Footer,
     Navbar,
+  },
+  data() {
+    return {
+      form: {
+        UGprogram: null,
+        Exam: null,
+        rank: null,
+      },
+    };
   },
 };
 </script>
@@ -69,5 +82,15 @@ export default {
 label {
   font-family: "poppins";
   font-size: 1.2rem;
+}
+.UGprogram,
+#Exam {
+  padding: 1%;
+  color: grey;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  width: 50%;
+  margin-top: 2%;
 }
 </style>
