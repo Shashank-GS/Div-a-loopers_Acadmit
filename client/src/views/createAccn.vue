@@ -301,4 +301,7 @@ input[type="date"] {
 #gender {
   padding-bottom: 5px;
 }
+option{
+  font-size: 1rem;
+}
 </style>
