@@ -54,9 +54,7 @@ nav{
     color: white;
     padding: 1rem;    
     font-style: normal;
-    font-weight: 900;;
 }
-
 .nav-links li a:hover {
     color:rgb(88, 160, 228);
 }

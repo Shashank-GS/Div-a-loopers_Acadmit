@@ -7,10 +7,30 @@
         ACADMIT.
       </h1>
       <div class="motto">Easy way to get admission in your dream college</div>
+      <button>Sign Up</button>
     </div>
   </div>
-  <div class="About section">
+  <div class="About_section">
     <h1><span >What is Acadmit?</span></h1>
+    <div class="content">
+      <p>The University Management System Software is an end-to-end cloud-based University solution developed for conducting, monitoring & analyzing complex activities of University and its affiliated colleges like Centralized Admission, Centralized Examination, and much  more. Right from streamlining operations like student rollment, admissions, assessments & examination management</p>
+    </div>
+  </div>
+  <div class="Step_section">
+    <h1><span >5 Simple Steps</span></h1>
+    <div class="step_container">
+      <ul class="progressor">
+        <li>Login</li>
+        <li>Create Profile</li>
+        <li>Search Colleges</li>
+        <li>Apply Online</li>
+        <li>Get Admission</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>We search results from over 1000+ institutes all over India </p>
+    <a href="#">View Institues ></a>
   </div>
   </div>
 </template>
@@ -28,18 +48,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-  .background-img{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Abril+Fatface&display=swap');
+.background-img{
     background-image: url(../assets/Hero_img.png);
     width: 100%;
     height: 60vh;
     background-size:cover ;
-  }
+}
   .overlay {
   width: 100%;
   height: 51vh;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(5, 5, 5, 0.28);;
   color:white;
   h1{
     position: absolute;
@@ -57,9 +77,149 @@ export default {
     left: 5%;
     top: 45%;
     font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 27px;
+  }
+  button{
+    position: relative;
+    top:55%;
+    left: 5%;
+    width: 118px;
+    height:48px;
+    font-size: 18px;
+    background: #000D3A;
+    border: none;
+    cursor: pointer;
+    color:white;
+    border-radius: 6px;
+  }
+}
+.About_section{
+  width: 50%;
+  margin: 100px auto;
+  text-align: center;
+  color: #000D3A;
+  h1{
+    font-family: Poppins;
+    font-style: medium;
+    font-size: 2rem;
+    font-weight:1000;
+    position:relative;
+  }
+  h1:before{
+    content:" ";
+    display: block;
+    width: 120px;
+    height:1px;
+    background: #000D3A;
+    left:8%;
+    top:50%;
+    position:absolute;
+  }
+  h1:after{
+    content:" ";
+    display: block;
+    width: 120px;
+    height:1px;
+    background: #000D3A;
+    right:8%;
+    top:50%;
+    position:absolute;
+  }
+  .content p{
+  font-family: Montserrat;
+}
+}
+.Step_section{
+  width: 50%;
+  margin: -50px auto;
+  text-align: center;
+  color: #000D3A;
+  h1{
+    font-family: Poppins;
+    font-style: medium;
+    font-size: 2rem;
+    font-weight:1000;
+    position:relative;
+  }
+  h1:before{
+    content:" ";
+    display: block;
+    width: 120px;
+    height:1px;
+    background: #000D3A;
+    left:10%;
+    top:50%;
+    position:absolute;
+  }
+  h1:after{
+    content:" ";
+    display: block;
+    width: 120px;
+    height:1px;
+    background: #000D3A;
+    right:10%;
+    top:50%;
+    position:absolute;
+  }
+}
+.progressor{
+  margin-left:-5%;
+  margin-top:4rem;
+}
+.progressor li{
+  font-family: Montserrat;
+  font-size: 17px;
+  list-style: none;
+  float: left;
+  width:20%;
+  position: relative;
+  text-align: center;
+
+}
+.progressor li:before{
+  content:"";
+  width:10px;
+  height:10px;
+  border: 5px solid #000D3A;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+  background-color: white;
+  }
+  .progressor li:after{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height:2px;
+    background-color:#000D3A;
+    top: 9px;
+    left: -45%;
+    z-index: -1;
+  }
+  .progressor li:first-child:after{
+    content: none;
+  }
+.bottom{
+  position: absolute;
+  width: 100%;
+  height: 25vh;
+  top: 145%;
+  background: #E7E1E1;
+  color: black;
+  text-align: center;
+  p{
+    font-family: Poppins;
+    font-size: 35px;
+  }
+  a{
+    text-decoration: none;
+    font-size: 23px;
+    font-family: Poppins;
+    color:black;
+    position: relative;
+    top: -15px;
+
   }
 }
 </style>
