@@ -34,29 +34,29 @@
         v-if="show == true"
         action=""
         id="createaccount"
-        @submit.prevent="onSubmit"
+        @submit.prevent="onCreateAccount"
       >
         <h1>Student Details</h1>
         <div class="studentdetails">
           <div class="form-group">
-            <label for="fname">First Name </label><br />
-            <input type="text" id="fname" required v-model="form.fname" />
+            <label for="firstName">First Name </label><br />
+            <input type="text" id="firstName" required v-model="studentform.firstName" />
           </div>
           <div class="form-group">
-            <label for="lname">Last name </label><br />
-            <input type="text" id="lname" required v-model="form.lname" />
+            <label for="lastName">Last name </label><br />
+            <input type="text" id="lastName" required v-model="studentform.lastName" />
           </div>
           <div class="form-group">
             <label for="email">Email </label><br />
-            <input type="email" id="email" required v-model="form.email" />
+            <input type="email" id="email" required v-model="studentform.email" />
           </div>
           <div class="form-group">
-            <label for="contact">Contact no.</label><br />
-            <input type="tel" id="contact" required v-model="form.contact" />
+            <label for="contactNo">Contact no.</label><br />
+            <input type="tel" id="contactNo" required v-model="studentform.contactNo" />
           </div>
           <div class="form-group">
             <label for="age">Age </label><br />
-            <input type="text" id="age" required v-model="form.age" />
+            <input type="text" id="age" required v-model="studentform.age" />
           </div>
           <div class="form-group">
             <label for="gender">Gender </label><br />
@@ -65,7 +65,7 @@
               id="male"
               name="gender"
               value="male"
-              v-model="form.gender"
+              v-model="studentform.gender"
             />
             <label for="male">Male</label>
             <input
@@ -73,7 +73,7 @@
               id="female"
               name="gender"
               value="female"
-              v-model="form.gender"
+              v-model="studentform.gender"
             />
             <label for="female">Female</label>
             <input
@@ -81,13 +81,13 @@
               id="other"
               name="gender"
               value="other"
-              v-model="form.gender"
+              v-model="studentform.gender"
             />
             <label for="other">Other</label>
           </div>
           <div class="form-group">
             <label for="Caste">Caste</label><br />
-            <select id="Caste" v-model="form.caste">
+            <select id="Caste" v-model="studentform.caste">
               <option disabled value="">Please select one</option>
               <option>General</option>
               <option>SC</option>
@@ -96,54 +96,54 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="POB">Place Of Birth </label><br />
-            <input type="text" id="POB" required v-model="form.POB" />
+            <label for="placeOfBirth">Place Of Birth </label><br />
+            <input type="text" id="placeOfBirth" required v-model="studentform.placeOfBirth" />
           </div>
           <div class="form-group">
-            <label for="DOB">Date Of Birth </label><br />
-            <input type="date" id="DOB" required v-model="form.DOB" />
+            <label for="dateOfBirth">Date Of Birth </label><br />
+            <input type="date" id="dateOfBirth" required v-model="studentform.dateOfBirth" />
           </div>
           <div class="form-group">
-            <label for="Adhar">Adhaar No. </label><br />
-            <input type="text" id="Adhar" required v-model="form.adhaarno" />
+            <label for="adhaarNo">Adhaar No. </label><br />
+            <input type="text" id="adhaarNo" required v-model="studentform.adhaarNo" />
           </div>
         </div>
 
         <h1>Guardian Details</h1>
         <div class="guardiandetails">
           <div class="form-group">
-            <label for="faname">Father's Name </label><br />
-            <input type="text" id="faname" required v-model="form.fathername" />
+            <label for="fatherName">Father's Name </label><br />
+            <input type="text" id="fatherNname" required v-model="studentform.fatherName" />
           </div>
           <div class="form-group">
-            <label for="mname">Mother's Name </label><br />
-            <input type="text" id="mname" required v-model="form.mothername" />
+            <label for="motherName">Mother's Name </label><br />
+            <input type="text" id="motherName" required v-model="studentform.motherName" />
           </div>
           <div class="form-group">
-            <label for="gcontact">Contact no.</label><br />
-            <input type="tel" id="gcontact" required v-model="form.gcontact" />
+            <label for="guardianContactNo">Contact no.</label><br />
+            <input type="tel" id="guardianContactNo" required v-model="studentform.guardianContactNo" />
           </div>
         </div>
         <h1>Residential Details</h1>
         <div class="residentialdetails">
           <div class="form-group">
             <label for="country">Country</label><br />
-            <input type="text" id="country" required v-model="form.country" />
+            <input type="text" id="country" required v-model="studentform.country" />
           </div>
           <div class="form-group">
             <label for="state">State</label><br />
-            <input type="text" id="state" required v-model="form.state" />
+            <input type="text" id="state" required v-model="studentform.state" />
           </div>
           <div class="form-group">
             <label for="city">City</label><br />
-            <input type="text" id="state" required v-model="form.city" />
+            <input type="text" id="city" required v-model="studentform.city" />
           </div>
         </div>
         <h1>Educational Details</h1>
         <div class="residentialdetails">
           <div class="form-group">
             <label for="stream">Stream</label><br />
-            <select id="stream" v-model="form.stream">
+            <select id="stream" v-model="studentform.stream">
               <option disabled value="">Please select one</option>
               <option>Science</option>
               <option>Commerce</option>
@@ -152,12 +152,12 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="HSSC">HSSC Percentage/CGPA</label><br />
-            <input type="text" id="HSCC" required v-model="form.HSSC" />
+            <label for="resultHSSC">HSSC Percentage/CGPA</label><br />
+            <input type="text" id="resultHSCC" required v-model="studentform.resultHSSC" />
           </div>
           <div class="form-group">
-            <label for="SSC">SSC Percentage/CGPA</label><br />
-            <input type="text" id="SSC" required v-model="form.SSC" />
+            <label for="resultSSC">SSC Percentage/CGPA</label><br />
+            <input type="text" id="resultSSC" required v-model="studentform.resultSSC" />
           </div>
         </div>
         <hr />
@@ -175,6 +175,8 @@
 import Navbar from "@/components/navbar1.vue";
 import Footer from "@/components/footer.vue";
 
+import StudentService from '../StudentService'
+
 export default {
   name: "createAccn",
   components: {
@@ -184,34 +186,46 @@ export default {
   data() {
     return {
       show: false,
-      form: {
-        fname: null,
-        lname: null,
+      studentform: {
+        firstName: null, 
+        lastName: null,
         email: null,
         age: null,
         gender: null,
         caste: null,
-        contact: null,
-        POB: null,
-        DOB: null,
-        adhaarno: null,
+        contactNo: null,
+        placeOfBirth: null,
+        dateOfBirth: null,
+        adhaarNo: null,
         stream: null,
-        fathername: null,
-        mothername: null,
-        gcontact: null,
-        country: null,
-        state: null,
-        city: null,
-        HSSC: null,
-        SSC: null,
+        fatherName: null,
+        motherName: null,
+        guadianContactNo: null,
+          country: null,
+          state: null,
+          city: null,      
+        resultHSSC: null,
+        resultSSC: null,
       },
     };
   },
   methods: {
-    showform: function() {
-      this.show = true;
+    async onCreateAccount () { 
+      try {
+        await StudentService.AddStudent(this.studentform) 
+        alert('Your account has been Created') 
+        // this.studentform = null; 
+      } catch (error) {
+        alert(error)
+      }
     },
-  },
+
+    showform: function(){
+      this.show= true; 
+    }
+
+  }
+
 };
 </script>
 <style lang="scss" scoped>
