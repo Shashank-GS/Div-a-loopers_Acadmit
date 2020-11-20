@@ -84,6 +84,13 @@
               v-model="studentform.gender"
             />
             <label for="other">Other</label>
+            <!-- <label for="Gender">Gender</label><br />
+            <select id="Gender" v-model="form.gender">
+              <option disabled value="">Please select one</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select> -->
           </div>
           <div class="form-group">
             <label for="Caste">Caste</label><br />
@@ -291,6 +298,8 @@ button {
 }
 form h1 {
   font-size: 1.3rem;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .button {
@@ -303,5 +312,32 @@ form h1 {
 .end {
   text-align: center;
   margin: 4%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"] {
+  padding: 2.6%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  width: 50%;
+  margin-top: 2%;
+  font-family: "Montserrat";
+}
+#Gender,
+#Caste,
+#stream {
+  padding: 2%;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  width: 50%;
+  margin-top: 2%;
+}
+#gender {
+  padding-bottom: 5px;
 }
 </style>
