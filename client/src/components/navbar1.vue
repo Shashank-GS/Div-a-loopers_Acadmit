@@ -8,10 +8,10 @@
         </a>
         <div class="nav-links">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Institutes</a></li>
+            <router-link to="/">Home</router-link>
+            <router-link to="/about">Institues</router-link>
             <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Login</a></li>
+            <router-link to="/login">Login</router-link>
         </ul>
         </div>
     </nav>
@@ -48,14 +48,14 @@ nav{
     padding: 0;
 }
 
-.nav-links li a {
+.nav-links ul a{
     font-family: Poppins;
     display: block;
     color: white;
     padding: 1rem;    
     font-style: normal;
 }
-.nav-links li a:hover {
+.nav-links .router-link-exact-active{
     color:rgb(88, 160, 228);
 }
 
