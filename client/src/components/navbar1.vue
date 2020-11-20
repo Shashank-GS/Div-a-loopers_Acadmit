@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <div class="logo">ACADMIT</div>
+        <div class="logo">Acadmit</div>
         <a href="#" class="toggle-button">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -32,6 +32,9 @@ nav{
 }
 .logo{
     font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.02em;
     font-size: 1.5rem;
     margin: 1rem;
 }
@@ -46,9 +49,12 @@ nav{
 }
 
 .nav-links li a {
+    font-family: Poppins;
     display: block;
     color: white;
-    padding: 1rem;
+    padding: 1rem;    
+    font-style: normal;
+    font-weight: 900;;
 }
 
 .nav-links li a:hover {
