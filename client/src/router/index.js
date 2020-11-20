@@ -40,6 +40,12 @@ const routes = [
     component: () => import("../views/createAccn.vue"),
     props: true,
   },
+  {
+    path: "/search",
+    name: "search",
+    component: () => import("../views/search.vue"),
+    props: true,
+  },
 ];
 
 const router = new VueRouter({

@@ -29,39 +29,45 @@
           </li>
         </ul>
       </div>
-      <form action="" v-if="show == true">
-        <label for="fname">First name:</label><br />
-        <input v-model="fname" type="text" /><br />
-        <label for="lname">Last name:</label><br />
-        <input v-model="lname" type="text" /><br />
-        <label for="email">Email:</label><br />
-        <input v-model="email" type="email" /><br />
-        <label for="age">Age:</label><br />
-        <input v-model="age" type="number" /><br />
-        <label for="email">Email:</label><br />
-        <input v-model="email" type="email" /><br />
-        <label for="male">Gender:</label><br />
-        <input type="radio" id="male" />
-        <label for="male">Male</label><br />
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">Female</label><br />
-        <input type="radio" id="other" name="gender" value="other" />
-        <label for="other">Other</label>
+      <form action="">
+        <form
+          v-if="show == true"
+          action=""
+          id="createaccount"
+          @submit.prevent="onSubmit"
+        >
+          <div class="form-group">
+            <label for="id">First Name </label>
+            <input type="text" id="id" required v-model="form.fname" />
+          </div>
+          <div class="form-group">
+            <label for="name">Last name </label>
+            <input type="text" id="name" required v-model="form.lname" />
+          </div>
+          <div class="form-group">
+            <label for="raitings">Email </label>
+            <input type="email" id="ratings" required v-model="form.email" />
+          </div>
+          <div class="form-group">
+            <label for="age">Age </label>
+            <input type="text" id="age" required v-model="form.age" />
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Add Sailor" class="btn" />
+          </div>
+        </form>
       </form>
     </section>
-
-    <Footer></Footer>
   </div>
 </template>
 <script>
 // // @ is an alias to /src
-import Footer from "@/components/footer.vue";
+
 import Navbar from "@/components/navbar1.vue";
 
 export default {
   name: "About",
   components: {
-    Footer,
     Navbar,
   },
   data() {
@@ -91,7 +97,7 @@ export default {
     };
   },
   methods: {
-    showform: function () {
+    showform: function() {
       this.show = true;
     },
   },
