@@ -3,7 +3,6 @@
     <Navbar></Navbar>
     <section>
       <h1>Welcome Lorem !</h1>
-      {{loginemail}}
       <h2>Your Account Details</h2>
       <button v-if="show == false" @click.prevent="showform">
         Edit Profile
@@ -286,7 +285,8 @@ export default {
       this.show= true; 
     },
     viewinstitute(){
-      this.$router.push('/search')
+       this.$router.push({name: "search",
+          params: { email: this.loginemail }})
     },
     update(){
       this.show=false
