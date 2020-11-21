@@ -58,7 +58,6 @@
         in which you are elegible to get admission
       </h4>
       <InstituteCard v-if="show == true"></InstituteCard>
-      <InstituteCard v-if="show == true"></InstituteCard>
     </section>
 
     <Footer></Footer>
