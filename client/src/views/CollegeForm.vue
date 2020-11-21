@@ -6,7 +6,7 @@
       <h2>
         Fill the required details and click apply to submit the application form
       </h2>
-      <form action="" id="createaccount" @submit.prevent="onCreateAccount">
+      <form action="" id="createaccount" @submit.prevent="applys">
         <h1>Student Details</h1>
         <div class="studentdetails">
           <div class="form-group">
@@ -225,6 +225,7 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/footer.vue";
+import axios from 'axios'; 
 export default {
   name: "CollegeForm",
   components: {
@@ -233,6 +234,7 @@ export default {
   },
   data() {
     return {
+      loginemail:this.$route.params.email, 
       studentform: {
         firstName: null,
         lastName: null,
@@ -256,6 +258,25 @@ export default {
       },
     };
   },
+  mounted() {
+    const url= "http://localhost:5000/student/"
+    const loginnow=this.loginemail
+    axios.get(`${url}${loginnow}`)
+    .then((response)=>{
+      console.log(this.studentform)
+      console.log(response.data);
+      this.studentform= response.data[0] ; 
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  },
+  methods:{
+      applys(){
+        alert('Application sent successfully'),
+        this.$router.push('/search')
+      }
+  }
 };
 </script>
 

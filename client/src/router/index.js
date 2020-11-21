@@ -52,7 +52,19 @@ const routes = [
     props:true
   },
   {
+    path: "/apply/:email",
+    name: "CollegeForm",
+    component: () => import("../views/CollegeForm.vue"),
+    props:true
+  },
+  {
     path: "/search",
+    name: "search",
+    component: () => import("../views/search.vue"),
+    props: true,
+  },
+  {
+    path: "/search/:email",
     name: "search",
     component: () => import("../views/search.vue"),
     props: true,

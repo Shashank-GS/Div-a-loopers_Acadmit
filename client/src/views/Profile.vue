@@ -83,7 +83,7 @@
           <input type="submit" value="Search Institutes" class="button" @click="viewinstitute"/>
         </div>
       </div>
-      <!-- <form
+      <form
         v-if="show == true"
         action=""
         id="createaccount"
@@ -218,7 +218,7 @@
         <div class="form-group end">
           <input type="submit" value="Update Profile" class="button" @click="update"/>
         </div>
-      </form> -->
+      </form>
     </section>
     <Footer></Footer>
   </div>
@@ -241,28 +241,27 @@ export default {
     return {
       show: false,
       loginemail:this.$route.params.email, 
-      studentform: '' , 
-      // studentform: {
-      //   firstName: null, 
-      //   lastName: null,
-      //   email: null,
-      //   age: null,
-      //   gender: null,
-      //   caste: null,
-      //   contactNo: null,
-      //   placeOfBirth: null,
-      //   dateOfBirth: null,
-      //   adhaarNo: null,
-      //   stream: null,
-      //   fatherName: null,
-      //   motherName: null,
-      //   guadianContactNo: null,
-      //     country: null,
-      //     state: null,
-      //     city: null,      
-      //   resultHSSC: null,
-      //   resultSSC: null,
-      // },
+      studentform: {
+        firstName: null, 
+        lastName: null,
+        email: null,
+        age: null,
+        gender: null,
+        caste: null,
+        contactNo: null,
+        placeOfBirth: null,
+        dateOfBirth: null,
+        adhaarNo: null,
+        stream: null,
+        fatherName: null,
+        motherName: null,
+        guadianContactNo: null,
+          country: null,
+          state: null,
+          city: null,      
+        resultHSSC: null,
+        resultSSC: null,
+      },
     };
   },
   mounted() {
