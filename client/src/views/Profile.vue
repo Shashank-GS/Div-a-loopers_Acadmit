@@ -10,7 +10,7 @@
       </button>
       <div v-if="show == false">
         <h1>Student Details</h1>
-        <div class="studentdetails">
+        <div class="studentdetails" v-bind:item="studentform">
           <div class="form-group">
             <label class="a" for="firstName">First Name: </label>{{studentform.firstName}}
           </div>
@@ -84,7 +84,7 @@
           <input type="submit" value="Search Institutes" class="button" @click="viewinstitute"/>
         </div>
       </div>
-      <form
+      <!-- <form
         v-if="show == true"
         action=""
         id="createaccount"
@@ -138,13 +138,7 @@
               v-model="studentform.gender"
             />
             <label for="other">Other</label>
-            <!-- <label for="Gender">Gender</label><br />
-            <select id="Gender" v-model="form.gender">
-              <option disabled value="">Please select one</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select> -->
+            
           </div>
           <div class="form-group">
             <label for="Caste">Caste</label><br />
@@ -225,7 +219,7 @@
         <div class="form-group end">
           <input type="submit" value="Update Profile" class="button" @click="update"/>
         </div>
-      </form>
+      </form> -->
     </section>
     <Footer></Footer>
   </div>
@@ -236,8 +230,8 @@
 import Navbar from "@/components/Navbar 2.vue";
 import Footer from "@/components/footer.vue";
 
-import StudentService from '../StudentService'
-
+// import StudentService from '../StudentService'
+import axios from 'axios' ; 
 export default {
   name: "createAccn",
   components: {
@@ -247,40 +241,46 @@ export default {
   data() {
     return {
       show: false,
-      loginemail:this.$route.params.email,
-      studentform: {
-        firstName: null, 
-        lastName: null,
-        email: null,
-        age: null,
-        gender: null,
-        caste: null,
-        contactNo: null,
-        placeOfBirth: null,
-        dateOfBirth: null,
-        adhaarNo: null,
-        stream: null,
-        fatherName: null,
-        motherName: null,
-        guadianContactNo: null,
-          country: null,
-          state: null,
-          city: null,      
-        resultHSSC: null,
-        resultSSC: null,
-      },
+      loginemail:this.$route.params.email, 
+      studentform: '' , 
+      // studentform: {
+      //   firstName: null, 
+      //   lastName: null,
+      //   email: null,
+      //   age: null,
+      //   gender: null,
+      //   caste: null,
+      //   contactNo: null,
+      //   placeOfBirth: null,
+      //   dateOfBirth: null,
+      //   adhaarNo: null,
+      //   stream: null,
+      //   fatherName: null,
+      //   motherName: null,
+      //   guadianContactNo: null,
+      //     country: null,
+      //     state: null,
+      //     city: null,      
+      //   resultHSSC: null,
+      //   resultSSC: null,
+      // },
     };
   },
+  mounted() {
+    const url= "http://localhost:5000/student/"
+    const loginnow=this.loginemail
+    axios.get(`${url}${loginnow}`)
+    .then((response)=>{
+      console.log(this.studentform)
+      console.log(response.data);
+      this.studentform= response.data[0] ; 
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  },
   methods: {
-    async onCreateAccount () { 
-      try {
-        await StudentService.AddStudent(this.studentform) 
-        alert('Your account has been Created') 
-        // this.studentform = null; 
-      } catch (error) {
-        alert(error)
-      }
-    },
+   
 
     showform: function(){
       this.show= true; 
