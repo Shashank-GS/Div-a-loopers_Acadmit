@@ -3,9 +3,8 @@
     <Navbar></Navbar>
     <section>
       <div class="top">
-        <form action=""  @submit.prevent="onShowResult">
+        <form action="" @submit.prevent="onShowResult">
           <div class="bckg">
-            \
             <h1>Search Institutes..</h1>
             <div class="inputgrid">
               <div class="form-group first">
@@ -24,35 +23,42 @@
               </div>
               <div class="form-group second">
                 <label for="examsQualified">Enter Exam Answered</label><br />
-                <select required name="examsQualified" v-model="form.examsQualified" id="Exam">
+                <select
+                  required
+                  name="examsQualified"
+                  v-model="form.examsQualified"
+                  id="Exam"
+                >
                   <option value="GCET">GCET</option>
                   <option value="NEET">NEET</option>
                   <option value="JEEmains">JEE mains</option>
-                   <option value="HSSC">HSSC 12th</option> 
+                  <option value="HSSC">HSSC 12th</option>
                 </select>
               </div>
               <div class="form-group third">
                 <label for="Rank">Enter Rank</label><br />
-                <input
-                  required
-                  id="Rank"
-                  type="number"
-                  v-model="form.rank"
-                />
+                <input required id="Rank" type="number" v-model="form.rank" />
               </div>
             </div>
           </div>
 
           <div class="form-group end">
-            <input type="submit" value="Show result" class="button" />
+            <input
+              @click.prevent="showform"
+              type="submit"
+              value="Show result"
+              class="button"
+            />
           </div>
         </form>
       </div>
 
-      <h4>
+      <h4 v-if="show == false">
         Enter the details and click on show results to find list of Institutes
         in which you are elegible to get admission
       </h4>
+      <InstituteCard v-if="show == true"></InstituteCard>
+      <InstituteCard v-if="show == true"></InstituteCard>
     </section>
 
     <Footer></Footer>
@@ -62,21 +68,18 @@
 <script>
 import Footer from "@/components/footer.vue";
 import Navbar from "@/components/Navbar 2.vue";
-import CollegeService from '../CollegeService'
+import InstituteCard from "@/components/InstituteCard.vue";
+import CollegeService from "../CollegeService";
 export default {
   name: "search",
   components: {
     Footer,
     Navbar,
+    InstituteCard,
   },
   data() {
     return {
-      college:{
-        collegeId:null,
-        offeredUGProgram:null,
-        examsQualified:null,
-        collegeaddress:null
-      },
+      show: false,
       form: {
         offeredUGprogram: null,
         examsQualified: null,
@@ -84,17 +87,20 @@ export default {
       },
     };
   },
-   methods: {
-    async onShowResult() { 
+  methods: {
+    async onShowResult() {
       try {
-        await CollegeService.SearchCollege(this.form) 
-        alert('Your data ready to search') 
-        // this.studentform = null; 
+        await CollegeService.SearchCollege(this.form);
+        alert("Your data ready to search");
+        // this.studentform = null;
       } catch (error) {
-        alert(error)
+        alert(error);
       }
     },
-   }
+    showform: function () {
+      this.show = true;
+    },
+  },
 };
 </script>
 
@@ -174,7 +180,8 @@ h4 {
   font-size: 1.3rem;
 }
 section {
-  min-height: 100vh; /* will cover the 100% of viewport */
+  margin-top: 1px;
+  min-height: 100vh;
   overflow: hidden;
   display: block;
   position: relative;

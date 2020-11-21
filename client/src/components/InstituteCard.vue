@@ -27,6 +27,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   display: grid;
+  padding: 1.4%;
   grid-template-columns: 1fr 1fr;
   font-family: "poppins";
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);

@@ -22,6 +22,17 @@ const Student = require("../models/student");
       res.send(e);
     }
   });
+  Router.get("/student/:email", async (req, res) => {
+    try {
+      const email= req.params.email;
+      console.log(email); 
+      const studentsData = await Student.find({email: req.params.email}); 
+      console.log(studentsData);
+      res.send(studentsData);
+    } catch (e) {
+      res.send(e);
+    }
+  });
   
   Router.delete("/student/:id", async(req,res)=>{
       try{

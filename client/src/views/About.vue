@@ -1,9 +1,9 @@
 <template>
-<div>
-   <Navbar></Navbar>
-   <InstituteCard></InstituteCard>
-   <Footer></Footer>
-</div>
+  <div>
+    <Navbar></Navbar>
+    <InstituteCard></InstituteCard>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
@@ -20,7 +20,3 @@ export default {
   },
 };
 </script>
-
-<sty
-    InstituteCardle></sty>
-                    
