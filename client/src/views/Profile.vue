@@ -2,7 +2,7 @@
   <div class="acc">
     <Navbar></Navbar>
     <section>
-      <h1>Welcome Lorem !</h1>
+      <h1>Welcome {{ studentform.firstName + " " + studentform.lastName }}</h1>
       <h2>Your Account Details</h2>
       <button v-if="show == false" @click.prevent="showform">
         Edit Profile
@@ -11,76 +11,95 @@
         <h1>Student Details</h1>
         <div class="studentdetails" v-bind:item="studentform">
           <div class="form-group">
-            <label class="a" for="firstName">First Name: </label>{{studentform.firstName}}
+            <label class="a" for="firstName">First Name: </label
+            >{{ studentform.firstName }}
           </div>
           <div class="form-group">
-            <label class="a" for="lastName">Last name: </label>{{studentform.lastName}}
+            <label class="a" for="lastName">Last name: </label
+            >{{ studentform.lastName }}
           </div>
           <div class="form-group">
-            <label class="a"  for="email">Email: </label>{{studentform.email}}
+            <label class="a" for="email">Email: </label>{{ studentform.email }}
           </div>
           <div class="form-group">
-            <label class="a"  for="contactNo">Contact no.:</label>{{studentform.contactNo}}
+            <label class="a" for="contactNo">Contact no.:</label
+            >{{ studentform.contactNo }}
           </div>
           <div class="form-group">
-            <label  class="a" for="age">Age: </label>{{studentform.age}}
+            <label class="a" for="age">Age: </label>{{ studentform.age }}
           </div>
           <div class="form-group">
-            <label class="a" for="gender">Gender: </label>{{studentform.gender}}
+            <label class="a" for="gender">Gender: </label
+            >{{ studentform.gender }}
           </div>
           <div class="form-group">
-            <label class="a" for="Caste">Caste:</label>{{studentform.caste}}
+            <label class="a" for="Caste">Caste:</label>{{ studentform.caste }}
           </div>
           <div class="form-group">
-            <label class="a" for="placeOfBirth">Place Of Birth: </label>{{studentform.placeOfBirth}}
+            <label class="a" for="placeOfBirth">Place Of Birth: </label
+            >{{ studentform.placeOfBirth }}
           </div>
           <div class="form-group">
-            <label class="a" for="dateOfBirth">Date Of Birth: </label>{{studentform.dateOfBirth}}
+            <label class="a" for="dateOfBirth">Date Of Birth: </label
+            >{{ studentform.dateOfBirth }}
           </div>
           <div class="form-group">
-            <label class="a" for="adhaarNo">Adhaar No.: </label>{{studentform.adhaarNo}}
+            <label class="a" for="adhaarNo">Adhaar No.: </label
+            >{{ studentform.adhaarNo }}
           </div>
         </div>
 
         <h1>Guardian Details</h1>
         <div class="guardiandetails">
           <div class="form-group">
-            <label class="a" for="fatherName">Father's Name: </label>{{studentform.fatherName}}
+            <label class="a" for="fatherName">Father's Name: </label
+            >{{ studentform.fatherName }}
           </div>
           <div class="form-group">
-            <label class="a" for="motherName">Mother's Name: </label>{{studentform.motherName}}
+            <label class="a" for="motherName">Mother's Name: </label
+            >{{ studentform.motherName }}
           </div>
           <div class="form-group">
-            <label class="a" for="guardianContactNo">Contact no.:</label>{{studentform.guardianContactNo}}
+            <label class="a" for="guardianContactNo">Contact no.:</label
+            >{{ studentform.guardianContactNo }}
           </div>
         </div>
         <h1>Residential Details</h1>
         <div class="residentialdetails">
           <div class="form-group">
-            <label class="a" for="country">Country:</label>{{studentform.country}}
+            <label class="a" for="country">Country:</label
+            >{{ studentform.country }}
           </div>
           <div class="form-group">
-            <label class="a" for="state">State:</label>{{studentform.state}}
+            <label class="a" for="state">State:</label>{{ studentform.state }}
           </div>
           <div class="form-group">
-            <label class="a" for="city">City:</label>{{studentform.city}}
+            <label class="a" for="city">City:</label>{{ studentform.city }}
           </div>
         </div>
         <h1>Educational Details</h1>
         <div class="residentialdetails">
           <div class="form-group">
-            <label class="a" for="stream">Stream:</label>{{studentform.stream}}
+            <label class="a" for="stream">Stream:</label
+            >{{ studentform.stream }}
           </div>
           <div class="form-group">
-            <label class="a" for="resultHSSC">HSSC Percentage/CGPA:</label>{{studentform.resultHSSC}}
+            <label class="a" for="resultHSSC">HSSC Percentage/CGPA:</label
+            >{{ studentform.resultHSSC }}
           </div>
           <div class="form-group">
-            <label class="a" for="resultSSC">SSC Percentage/CGPA:</label>{{studentform.resultSSC}}
+            <label class="a" for="resultSSC">SSC Percentage/CGPA:</label
+            >{{ studentform.resultSSC }}
           </div>
         </div>
         <hr />
         <div class="form-group end">
-          <input type="submit" value="Search Institutes" class="button" @click="viewinstitute"/>
+          <input
+            type="submit"
+            value="Search Institutes"
+            class="button"
+            @click="viewinstitute"
+          />
         </div>
       </div>
       <form
@@ -230,7 +249,7 @@ import Navbar from "@/components/Navbar 2.vue";
 import Footer from "@/components/footer.vue";
 
 // import StudentService from '../StudentService'
-import axios from 'axios' ; 
+import axios from "axios";
 export default {
   name: "createAccn",
   components: {
@@ -240,6 +259,31 @@ export default {
   data() {
     return {
       show: false,
+<<<<<<< HEAD
+      loginemail: this.$route.params.email,
+      studentform: "",
+      // studentform: {
+      //   firstName: null,
+      //   lastName: null,
+      //   email: null,
+      //   age: null,
+      //   gender: null,
+      //   caste: null,
+      //   contactNo: null,
+      //   placeOfBirth: null,
+      //   dateOfBirth: null,
+      //   adhaarNo: null,
+      //   stream: null,
+      //   fatherName: null,
+      //   motherName: null,
+      //   guadianContactNo: null,
+      //     country: null,
+      //     state: null,
+      //     city: null,
+      //   resultHSSC: null,
+      //   resultSSC: null,
+      // },
+=======
       loginemail:this.$route.params.email, 
       studentform: {
         firstName: null, 
@@ -262,37 +306,34 @@ export default {
         resultHSSC: null,
         resultSSC: null,
       },
+>>>>>>> 25d353c76c3bed1aacce5f3372311868f001150e
     };
   },
   mounted() {
-    const url= "http://localhost:5000/student/"
-    const loginnow=this.loginemail
-    axios.get(`${url}${loginnow}`)
-    .then((response)=>{
-      console.log(this.studentform)
-      console.log(response.data);
-      this.studentform= response.data[0] ; 
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
+    const url = "http://localhost:5000/student/";
+    const loginnow = this.loginemail;
+    axios
+      .get(`${url}${loginnow}`)
+      .then((response) => {
+        console.log(this.studentform);
+        console.log(response.data);
+        this.studentform = response.data[0];
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
   methods: {
-   
-
-    showform: function(){
-      this.show= true; 
+    showform: function () {
+      this.show = true;
     },
-    viewinstitute(){
-       this.$router.push({name: "search",
-          params: { email: this.loginemail }})
+    viewinstitute() {
+      this.$router.push({ name: "search", params: { email: this.loginemail } });
     },
-    update(){
-      this.show=false
-    }
-
-  }
-
+    update() {
+      this.show = false;
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -307,7 +348,7 @@ section {
   padding-bottom: 212.109px;
   margin-top: 2%;
 }
-.a{
+.a {
   font-weight: 600;
 }
 .acc {
@@ -406,7 +447,7 @@ input[type="date"] {
 #gender {
   padding-bottom: 5px;
 }
-option{
+option {
   font-size: 1rem;
 }
 </style>

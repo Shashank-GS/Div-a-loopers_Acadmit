@@ -213,12 +213,11 @@
           <input type="file" ref="file" @change="selectFile" required />
         </div>
         <div class="fileupload">
-          <label for="file" class="file">Upload SCC Marksheet</label><br />
+          <label for="file" class="file">Upload HSCC Marksheet</label><br />
           <input type="file" ref="file" @change="selectFile" required />
         </div>
         <div class="fileupload">
-          <label for="file" class="file">Upload Leaving Certificate </label
-          ><br />
+          <label for="file" class="file">Upload HSCC Marksheet</label><br />
           <input type="file" ref="file" @change="selectFile" required />
         </div>
         <hr />
