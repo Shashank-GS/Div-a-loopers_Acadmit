@@ -6,9 +6,11 @@ const College = require("../models/college");
 
 Router.get("/college", async (req, res) => {
   try {
-    const collegesData = await College.find();
-    res.send(collegesData);
-  } catch (e) {
+    const collegesData = await College
+    .find({$or:[{offeredUGProgram: req.body.offeredUGProgram},{examsQualified: req.body.examsQualified},{rank:  req.body.rank}]}); 
+   console.log(collegesData) 
+    res.send(collegesData); 
+  } catch (e) { 
     res.send(e);
   }
 });
@@ -18,16 +20,16 @@ Router.get("/college", async (req, res) => {
 // const createDocument = async () => {
 //   try {
 //     const college1 = new College({
-//         collegeId:73 , 
-//       collegeName: "Goa College of Engineering",
-//         offeredUGProgram: "Bachelor of Engineering",
-//         examsQualified:"GCET",
+//         collegeId:80, 
+//       collegeName: "Goa Medical College",
+//         offeredUGProgram: "MBBS",
+//         examsQualified:"NEET",
 //         collegeaddress: {
 //             taluka: "Ponda" ,
 //             state: "Goa" ,
 //             country: "India" 
 //         },
-//         requiredPercentage: 55 , 
+//         rank: 300 , 
         
       
 //     });

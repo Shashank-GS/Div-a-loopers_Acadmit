@@ -3,31 +3,32 @@
     <Navbar></Navbar>
     <section>
       <div class="top">
-        <form action="">
+        <form action=""  @submit.prevent="onShowResult">
           <div class="bckg">
             \
             <h1>Search Institutes..</h1>
             <div class="inputgrid">
               <div class="form-group first">
-                <label for="UGprogram">Enter UG program</label><br />
+                <label for="offeredUGprogram">Enter UG program</label><br />
                 <select
                   required
-                  name="UGprogram"
-                  v-model="form.UGprogram"
+                  name="offeredUGprogram"
+                  v-model="form.offeredUGprogram"
                   class="UGprogram"
                 >
                   <option value="BE">BE</option>
                   <option value="MBBS">MBBS</option>
-                  <option value="BSci">BSci</option>
-                  <option value="BCom">BCom</option>
+                  <option value="BSC">BSC</option>
+                  <option value="BCOM">BCOM</option>
                 </select>
               </div>
               <div class="form-group second">
-                <label for="Exam">Enter Exam Answered</label><br />
-                <select required name="Exam" v-model="form.Exam" id="Exam">
+                <label for="examsQualified">Enter Exam Answered</label><br />
+                <select required name="examsQualified" v-model="form.examsQualified" id="Exam">
                   <option value="GCET">GCET</option>
                   <option value="NEET">NEET</option>
                   <option value="JEEmains">JEE mains</option>
+                   <option value="HSSC">HSSC 12th</option> 
                 </select>
               </div>
               <div class="form-group third">
@@ -35,8 +36,7 @@
                 <input
                   required
                   id="Rank"
-                  type="numb
-                        er"
+                  type="number"
                   v-model="form.rank"
                 />
               </div>
@@ -62,6 +62,7 @@
 <script>
 import Footer from "@/components/footer.vue";
 import Navbar from "@/components/navbar1.vue";
+import CollegeService from '../CollegeService'
 export default {
   name: "search",
   components: {
@@ -71,12 +72,23 @@ export default {
   data() {
     return {
       form: {
-        UGprogram: null,
-        Exam: null,
+        offeredUGprogram: null,
+        examsQualified: null,
         rank: null,
       },
     };
   },
+   methods: {
+    async onShowResult() { 
+      try {
+        await CollegeService.SearchCollege(this.form) 
+        alert('Your data ready to search') 
+        // this.studentform = null; 
+      } catch (error) {
+        alert(error)
+      }
+    },
+   }
 };
 </script>
 

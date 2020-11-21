@@ -21,7 +21,7 @@ const collegeSchema = new mongoose.Schema({
   collegeaddress: {
       type: Object,
   },
-  requiredPercentage: {
+  rank: {
     type: Number,
   }
 

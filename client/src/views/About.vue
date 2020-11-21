@@ -22,4 +22,5 @@ export default {
 </script>
 
 <sty
-    InstituteCardle></style>
+    InstituteCardle></sty>
+                    
