@@ -71,6 +71,12 @@ export default {
   },
   data() {
     return {
+      college:{
+        collegeId:null,
+        offeredUGProgram:null,
+        examsQualified:null,
+        collegeaddress:null
+      },
       form: {
         offeredUGprogram: null,
         examsQualified: null,

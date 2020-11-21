@@ -5,13 +5,13 @@
             <h2>Login</h2>
             <label>
             <span>Email Address:</span>
-            <input type="email" required/>
+            <input type="email" required v-model="email"/>
             </label>
             <label>
             <span>Password:</span>
-            <input type="password" required/>
+            <input type="password" required v-modal="password"/>
             </label>
-            <button class="submit" type="submit" >Sign In</button>
+            <button class="submit" type="submit" >Log In</button>
             <p class="question">New here?</p>
             <router-link to="/signup">Sign Up</router-link>
             </form>
@@ -25,13 +25,15 @@ export default {
   name: 'Login',
   data(){
       return{
-
+        email:null,
+        password:null
       }
   },
   methods:{
       login(){
           alert('Logged in successfully')
-          this.$router.push('/search')
+          this.$router.push({name: "ViewProfile",
+          params: { email: this.email }})
       }
   }
   

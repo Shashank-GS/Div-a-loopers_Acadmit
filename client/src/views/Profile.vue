@@ -3,6 +3,7 @@
     <Navbar></Navbar>
     <section>
       <h1>Welcome Lorem !</h1>
+      {{loginemail}}
       <h2>Your Account Details</h2>
       <button v-if="show == false" @click.prevent="showform">
         Edit Profile
@@ -246,10 +247,11 @@ export default {
   data() {
     return {
       show: false,
+      loginemail:this.$route.params.email,
       studentform: {
-        firstName: 'Hello', 
-        lastName: 'Hello',
-        email: 'Hello',
+        firstName: null, 
+        lastName: null,
+        email: null,
         age: null,
         gender: null,
         caste: null,
