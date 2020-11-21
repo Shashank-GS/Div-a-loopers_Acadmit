@@ -31,17 +31,29 @@ const routes = [
   {
     path: "/edit",
     name: "Edit",
-    component: () => import("../views/editAccn.vue")
+    component: () => import("../views/editAccn.vue"),
   },
   {
     path: "/create",
     name: "CreateAccount",
-    component: () => import("../views/createAccn.vue")
+    component: () => import("../views/createAccn.vue"),
   },
   {
     path: "/search",
     name: "search",
     component: () => import("../views/search.vue"),
+    props: true,
+  },
+  {
+    path: "/Collegedashboard",
+    name: "Collegedashboard",
+    component: () => import("../views/collegedashboard.vue"),
+    props: true,
+  },
+  {
+    path: "/CollegeForm",
+    name: "CollegeForm",
+    component: () => import("../views/CollegeForm.vue"),
     props: true,
   },
 ];
