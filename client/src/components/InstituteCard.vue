@@ -6,7 +6,7 @@
       <h3>Course: {{ Course }}</h3>
     </div>
     <div class="btn">
-      <button>Apply</button>
+      <button @click="apply">Apply</button>
     </div>
   </div>
 </template>
@@ -14,6 +14,7 @@
 export default {
   data() {
     return {
+      loginemail:this.$route.params.email,
       CollegeName: [
         "Goa College Of Engineering (GEC)",
         "Padre Conceicanv College Of Engineering (PCCE)",
@@ -22,6 +23,13 @@ export default {
       Course: "BE (4yrs)",
     };
   },
+  methods:{
+      
+    apply(){
+       this.$router.push({name: "CollegeForm",
+          params: { email: this.loginemail }})
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
