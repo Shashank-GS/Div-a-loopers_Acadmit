@@ -61,7 +61,7 @@
 
 <script>
 import Footer from "@/components/footer.vue";
-import Navbar from "@/components/navbar1.vue";
+import Navbar from "@/components/Navbar 2.vue";
 import CollegeService from '../CollegeService'
 export default {
   name: "search",

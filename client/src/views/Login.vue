@@ -1,7 +1,7 @@
 <template>
     <div class="Login">
         <div class="Container-Login">
-            <form class="form" @submit="login">
+            <form class="form" @submit.prevent="login">
             <h2>Login</h2>
             <label>
             <span>Email Address:</span>
@@ -23,6 +23,16 @@
 
 export default {
   name: 'Login',
+  data(){
+      return{
+
+      }
+  },
+  methods:{
+      login(){
+          this.$router.push('/search')
+      }
+  }
   
 }
 </script>

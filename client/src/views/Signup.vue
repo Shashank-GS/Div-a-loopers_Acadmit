@@ -1,7 +1,7 @@
 <template>
     <div class="SignUp">
         <div class="Container-Signup">
-             <form class="form" @submit="goto">
+             <form class="form" @submit.prevent="goto">
                 <h2>Sign Up</h2>
                     <label>
                         <span>Name:</span>
@@ -30,7 +30,8 @@
 <script>
 export default {
     data(){
-        return{user:{Name: null,
+        return{
+            user:{Name: null,
                 Email: null,
                 Password: null,
                 Cpassword: null}
@@ -38,11 +39,8 @@ export default {
     },
     methods:{
         goto(){
-            this.$router.push({
-            name: "CreateAccount"
-          });
-
-        }
+          this.$router.push('/create')
+      }
     }
 
 }
@@ -134,6 +132,7 @@ button {
     
   margin-top: 20px;
   margin-bottom: -10px;
+  margin-left: 10px;
   text-align: center;
   font-size: 14px;
   font-weight: 600;
@@ -148,7 +147,7 @@ button {
   cursor: pointer;
   position: relative;
   top: 15px;
-  left: 43.5%;
+  left: 46%;
 }
 @media (max-width: 600px) {
   .Container-Login{

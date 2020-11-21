@@ -179,7 +179,7 @@
 <script>
 // // @ is an alias to /src
 
-import Navbar from "@/components/navbar1.vue";
+import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/footer.vue";
 
 import StudentService from '../StudentService'

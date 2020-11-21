@@ -7,7 +7,7 @@
         ACADMIT.
       </h1>
       <div class="motto">Easy way to get admission in your dream college</div>
-      <button>Sign Up</button>
+      <button @click="signup">Sign Up</button>
     </div>
   </div>
   <div class="About_section">
@@ -39,7 +39,7 @@
 
 <script>
 // // @ is an alias to /src
-import Navbar from '@/components/navbar1.vue'
+import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/footer.vue'
 
 export default {
@@ -47,7 +47,17 @@ export default {
   components: {
     Navbar,
     Footer
-  }
+  },
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+      signup(){
+        this.$router.push('/signup')
+      }
+    }
 }
 </script>
 
@@ -70,7 +80,7 @@ export default {
   background-color: rgba(5, 5, 5, 0.28);;
   color:white;
   h1{
-    position: absolute;
+    position: relative;
     height: 20rem;
     left: 5%;
     top: 15%;
@@ -83,14 +93,14 @@ export default {
   .motto{
     position: relative;
     left: 5%;
-    top: 45%;
+    top: -60%;
     font-family: Poppins;
     font-weight: 400;
     font-size: 27px;
   }
   button{
     position: relative;
-    top:55%;
+    top:-55%;
     left: 5%;
     width: 118px;
     height:48px;
@@ -187,8 +197,8 @@ export default {
 }
 .progressor li:before{
   content:"";
-  width:10px;
-  height:10px;
+  width:20px;
+  height:20px;
   border: 5px solid #000D3A;
   border-radius: 50%;
   display: block;
@@ -202,7 +212,7 @@ export default {
     height:2px;
     background-color:#000D3A;
     top: 9px;
-    left: -45%;
+    left: -51%;
     z-index: -1;
   }
   .progressor li:first-child:after{
@@ -217,6 +227,7 @@ export default {
   color: black;
   text-align: center;
   p{
+    margin-top: 30px;
     font-family: Poppins;
     font-size: 35px;
   }
