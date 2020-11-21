@@ -246,10 +246,11 @@ export default {
   data() {
     return {
       show: false,
+      loginemail:this.$route.params.email,
       studentform: {
-        firstName: 'Hello', 
-        lastName: 'Hello',
-        email: 'Hello',
+        firstName: null, 
+        lastName: null,
+        email: null,
         age: null,
         gender: null,
         caste: null,
@@ -284,7 +285,8 @@ export default {
       this.show= true; 
     },
     viewinstitute(){
-      this.$router.push('/search')
+       this.$router.push({name: "search",
+          params: { email: this.loginemail }})
     },
     update(){
       this.show=false
