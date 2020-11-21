@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
+import Navbar from "@/components/Navbar 2.vue";
 import Footer from "@/components/footer.vue";
 export default {
   name: "Collegedashboard",
