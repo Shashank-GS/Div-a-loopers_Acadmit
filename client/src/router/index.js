@@ -41,7 +41,7 @@ const routes = [
   {
     path: "/profile",
     name: "ViewProfile",
-    component: () => import("../views/Profile.vue")
+    component: () => import("../views/Profile.vue"),
   },
   {
     path: "/search",
@@ -59,6 +59,12 @@ const routes = [
     path: "/CollegeForm",
     name: "CollegeForm",
     component: () => import("../views/CollegeForm.vue"),
+    props: true,
+  },
+  {
+    path: "/StudentList",
+    name: "StudentList",
+    component: () => import("../views/StudentList.vue"),
     props: true,
   },
 ];
