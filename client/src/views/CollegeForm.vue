@@ -223,7 +223,7 @@
 </template>
 
 <script>
-import Navbar from "@/components/navbar1.vue";
+import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/footer.vue";
 export default {
   name: "CollegeForm",
