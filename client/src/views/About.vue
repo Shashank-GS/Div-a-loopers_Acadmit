@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Navbar from "@/components/navbar1.vue";
+import Navbar from "@/components/Navbar.vue";
 import InstituteCard from "@/components/InstituteCard.vue";
 import Footer from "@/components/footer.vue";
 

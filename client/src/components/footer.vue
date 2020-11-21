@@ -31,8 +31,8 @@
         <ul>
           <li>
             <svg
-              width="20"
-              height="20"
+              width="30"
+              height="30"
               viewBox="0 0 27 27"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +46,8 @@
           </li>
           <li>
             <svg
-              width="20"
-              height="20"
+              width="30"
+              height="30"
               viewBox="0 0 22 22"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -61,8 +61,8 @@
           </li>
           <li>
             <svg
-              width="20"
-              height="20"
+              width="30"
+              height="30"
               viewBox="0 0 26 26"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -78,10 +78,10 @@
       </div>
       <div class="socialmedia">
         <h1>Connect with us</h1>
-        <div>
+        <div class="sicons">
           <svg
-            width="35"
-            height="35"
+            width="40"
+            height="40"
             viewBox="0 0 35 35"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -98,8 +98,8 @@
           </svg>
 
           <svg
-            width="35"
-            height="35"
+            width="40"
+            height="40"
             viewBox="0 0 35 35"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -111,8 +111,8 @@
             />
           </svg>
           <svg
-            width="35"
-            height="35"
+            width="40"
+            height="40"
             viewBox="0 0 35 35"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +152,7 @@ footer {
   overflow: hidden;
 }
 .footergrid {
-  padding-top: 2%;
+  padding-top: 1%;
   margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 0.7fr 1.5fr 1fr;
@@ -164,6 +164,9 @@ ul {
 }
 ul li {
   margin-bottom: 20px;
+}
+.navlinks{
+  margin-top:30px
 }
 .navlinks ul {
   line-height: 1.22;
@@ -180,7 +183,7 @@ footer h3 {
   font-weight: lighter;
 }
 .socialmedia svg {
-  padding-right: 7%;
+  padding-right: 6%;
 }
 .socialmedia h1 {
   font-size: 1rem;
@@ -190,13 +193,18 @@ footer h3 {
   font-weight: lighter;
 }
 #icon {
+  margin-top: 20px;
   line-height: 1.22;
   vertical-align: bottom;
 }
 .loccont svg {
   line-height: 1.22;
+  margin-bottom: -1%;
   padding-right: 3%;
   vertical-align: bottom;
+}
+.loccont{
+  margin-top: 20px;
 }
 .companylogo {
   display: flex;
