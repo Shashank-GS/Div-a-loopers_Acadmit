@@ -5,7 +5,6 @@
       <div class="top">
         <form action="" @submit.prevent="onShowResult">
           <div class="bckg">
-            \
             <h1>Search Institutes..</h1>
             <div class="inputgrid">
               <div class="form-group first">
@@ -176,7 +175,7 @@ h4 {
   text-align: center;
   font-family: "Montserrat";
   font-weight: lighter;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   margin-top: 4%;
   font-size: 1.3rem;
 }
