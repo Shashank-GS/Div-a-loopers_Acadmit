@@ -31,14 +31,12 @@ const routes = [
   {
     path: "/edit",
     name: "Edit",
-    component: () => import("../views/editAccn.vue"),
-    props: true,
+    component: () => import("../views/editAccn.vue")
   },
   {
     path: "/create",
     name: "CreateAccount",
-    component: () => import("../views/createAccn.vue"),
-    props: true,
+    component: () => import("../views/createAccn.vue")
   },
   {
     path: "/search",

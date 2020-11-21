@@ -149,6 +149,7 @@ footer {
   left: 0;
   width: 100vw;
   background-color: #000d3a;
+  overflow: hidden;
 }
 .footergrid {
   padding-top: 2%;

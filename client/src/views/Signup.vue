@@ -39,8 +39,7 @@ export default {
     methods:{
         goto(){
             this.$router.push({
-            name: "Edit",
-            params: { username: this.user.Name },
+            name: "CreateAccount"
           });
 
         }

@@ -32,23 +32,31 @@
     <p>We search results from over 1000+ institutes all over India </p>
     <a href="#">View Institues ></a>
   </div>
+  <Footer/>
   </div>
+  
 </template>
 
 <script>
 // // @ is an alias to /src
 import Navbar from '@/components/navbar1.vue'
+import Footer from '@/components/footer.vue'
 
 export default {
   name: 'Home',
   components: {
-    Navbar
+    Navbar,
+    Footer
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Abril+Fatface&display=swap');
+.home{
+  min-height: 100%;
+
+}
 .background-img{
     background-image: url(../assets/Hero_img.png);
     width: 100%;
@@ -221,5 +229,9 @@ export default {
     top: -15px;
 
   }
+}
+Footer{
+  position: relative;
+  margin-top: 30%;
 }
 </style>
