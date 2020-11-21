@@ -10,12 +10,13 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about",
+    path: "/about/:email",
     name: "About",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import("../views/About.vue"),
+    props: true,
   },
   {
     path: "/login",
@@ -42,10 +43,10 @@ const routes = [
     path: "/profile/:email",
     name: "ViewProfile",
     component: () => import("../views/Profile.vue"),
-    props:true
+    props: true,
   },
   {
-    path: "/search",
+    path: "/search/:email",
     name: "search",
     component: () => import("../views/search.vue"),
     props: true,
@@ -60,6 +61,12 @@ const routes = [
     path: "/CollegeForm",
     name: "CollegeForm",
     component: () => import("../views/CollegeForm.vue"),
+    props: true,
+  },
+  {
+    path: "/StudentList",
+    name: "StudentList",
+    component: () => import("../views/StudentList.vue"),
     props: true,
   },
 ];
