@@ -17,7 +17,7 @@
         <a class="nav-link" href="#">Contact Us</a>
       </li>
       <li class="nav-item">
-        <router-link to="/edit" class="nav-link">Edit Profile</router-link>
+        <router-link to="/profile" class="nav-link">View Profile</router-link>
       </li>
       <li class="nav-item">
         <router-link to="/" class="nav-link">Logout</router-link>

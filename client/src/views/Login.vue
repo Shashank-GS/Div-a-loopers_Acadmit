@@ -5,11 +5,11 @@
             <h2>Login</h2>
             <label>
             <span>Email Address:</span>
-            <input type="email" />
+            <input type="email" required/>
             </label>
             <label>
             <span>Password:</span>
-            <input type="password"/>
+            <input type="password" required/>
             </label>
             <button class="submit" type="submit" >Sign In</button>
             <p class="question">New here?</p>
@@ -30,6 +30,7 @@ export default {
   },
   methods:{
       login(){
+          alert('Logged in successfully')
           this.$router.push('/search')
       }
   }
