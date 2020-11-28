@@ -2,7 +2,7 @@
   <div class="acc">
     <Navbar></Navbar>
     <section>
-      <h1>College Name</h1>
+      <h1>Goa College Of Engineering</h1>
       <h2>
         Fill the required details and click apply to submit the application form
       </h2>
@@ -209,15 +209,20 @@
           </div>
         </div>
         <div class="fileupload">
-          <label for="file" class="file">Upload HSCC Marksheet</label><br />
+          <label for="file" class="file">Upload HSSC Marksheet</label><br />
           <input type="file" ref="file" @change="selectFile" required />
         </div>
         <div class="fileupload">
-          <label for="file" class="file">Upload HSCC Marksheet</label><br />
+          <label for="file" class="file">Upload SSC Marksheet</label><br />
           <input type="file" ref="file" @change="selectFile" required />
         </div>
         <div class="fileupload">
-          <label for="file" class="file">Upload HSCC Marksheet</label><br />
+          <label for="file" class="file">Upload GCET Marksheet</label><br />
+          <input type="file" ref="file" @change="selectFile" required />
+        </div>
+        <div class="fileupload">
+          <label for="file" class="file">Upload Leaving Certificate</label
+          ><br />
           <input type="file" ref="file" @change="selectFile" required />
         </div>
         <hr />
@@ -233,7 +238,7 @@
 <script>
 import Navbar from "@/components/Navbar 2.vue";
 import Footer from "@/components/footer.vue";
-import axios from 'axios'; 
+import axios from "axios";
 export default {
   name: "CollegeForm",
   components: {
@@ -242,7 +247,7 @@ export default {
   },
   data() {
     return {
-      loginemail:this.$route.params.email, 
+      loginemail: this.$route.params.email,
       studentform: {
         firstName: null,
         lastName: null,
@@ -267,24 +272,25 @@ export default {
     };
   },
   mounted() {
-    const url= "http://localhost:5000/student/"
-    const loginnow=this.loginemail
-    axios.get(`${url}${loginnow}`)
-    .then((response)=>{
-      console.log(this.studentform)
-      console.log(response.data);
-      this.studentform= response.data[0] ; 
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
+    const url = "http://localhost:5000/student/";
+    const loginnow = this.loginemail;
+    axios
+      .get(`${url}${loginnow}`)
+      .then((response) => {
+        console.log(this.studentform);
+        console.log(response.data);
+        this.studentform = response.data[0];
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
-  methods:{
-      applys(){
-          alert('Application sent successfully')
-          this.$router.push('/search')
-      }
-  }
+  methods: {
+    applys() {
+      alert("Application sent successfully");
+      this.$router.push({ name: "search", params: { email: this.loginemail } });
+    },
+  },
 };
 </script>
 

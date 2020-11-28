@@ -1,49 +1,45 @@
 <template>
-    <div class="SignUp">
-        <div class="Container-Signup">
-             <form class="form" @submit.prevent="goto">
-                <h2>Sign Up</h2>
-                    <label>
-                        <span>Name:</span>
-                        <input type="text" required v-model="user.Name" />
-                    </label>
-                    <label>
-                        <span>Email Address:</span>
-                        <input type="email" required v-model="user.Email"/>
-                    </label>
-                    <label>
-                        <span>Password:</span>
-                        <input type="password" required v-model="user.Password"  />
-                    </label>
-                    <label>
-                        <span>Confirm Password:</span>
-                        <input type="password"  required v-model="user.Cpassword"/>
-                    </label>
-                    <button class="submit" type="submit">Sign Up</button>
-                    <p class="question">Already a member?</p>
-                    <router-link to="/login">Login</router-link>
-            </form>
-        </div>   
+  <div class="SignUp">
+    <div class="Container-Signup">
+      <form class="form" @submit.prevent="goto">
+        <h2>Sign Up</h2>
+        <label>
+          <span>Name:</span>
+          <input type="text" required v-model="user.Name" />
+        </label>
+        <label>
+          <span>Email Address:</span>
+          <input type="email" required v-model="user.Email" />
+        </label>
+        <label>
+          <span>Password:</span>
+          <input type="password" required v-model="user.Password" />
+        </label>
+        <label>
+          <span>Confirm Password:</span>
+          <input type="password" required v-model="user.Cpassword" />
+        </label>
+        <button class="submit" type="submit">Sign Up</button>
+        <p class="question">Already a member?</p>
+        <router-link to="/login">Login</router-link>
+      </form>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            user:{Name: null,
-                Email: null,
-                Password: null,
-                Cpassword: null}
-        }
+  data() {
+    return {
+      user: { Name: null, Email: null, Password: null, Cpassword: null },
+    };
+  },
+  methods: {
+    goto() {
+      this.$router.push("/create");
     },
-    methods:{
-        goto(){
-          this.$router.push('/create')
-      }
-    }
-
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -53,7 +49,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: -webkit-linear-gradient(25rad, #000D3A, black);
+  background: -webkit-linear-gradient(25rad, #000d3a, black);
   font-family: Poppins, sans-serif;
 }
 .Container-Signup {
@@ -121,15 +117,14 @@ button {
   text-transform: uppercase;
   font-weight: 600;
   font-family: Poppins, sans-serif;
-  background: -webkit-linear-gradient(left, #000D3A, black);
+  background: -webkit-linear-gradient(left, #000d3a, black);
 }
 
 .submit:hover {
-  background: -webkit-linear-gradient(left, black, #000D3A);
+  background: -webkit-linear-gradient(left, black, #000d3a);
 }
 
 .question {
-    
   margin-top: 20px;
   margin-bottom: -10px;
   margin-left: 10px;
@@ -150,7 +145,7 @@ button {
   left: 46%;
 }
 @media (max-width: 600px) {
-  .Container-Login{
+  .Container-Login {
     width: 80vw;
   }
   .form label,

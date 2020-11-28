@@ -1,12 +1,24 @@
 <template>
-  <div class="card">
-    <div class="details">
-      <h1>{{ CollegeName[0] }}</h1>
-      <h2>Location: {{ Location }}</h2>
-      <h3>Course: {{ Course }}</h3>
+  <div>
+    <div class="card">
+      <div class="details">
+        <h1>{{ CollegeName[0] }}</h1>
+        <h2>Location: {{ Location }}</h2>
+        <h3>Course: {{ Course }}</h3>
+      </div>
+      <div class="btn">
+        <button @click="apply">Apply</button>
+      </div>
     </div>
-    <div class="btn">
-      <button @click="apply">Apply</button>
+    <div class="card">
+      <div class="details">
+        <h1>{{ CollegeName[1] }}</h1>
+        <h2>Location: {{ Location }}</h2>
+        <h3>Course: {{ Course }}</h3>
+      </div>
+      <div class="btn">
+        <button @click="apply">Apply</button>
+      </div>
     </div>
   </div>
 </template>
@@ -14,7 +26,7 @@
 export default {
   data() {
     return {
-      loginemail:this.$route.params.email,
+      loginemail: this.$route.params.email,
       CollegeName: [
         "Goa College Of Engineering (GEC)",
         "Padre Conceicanv College Of Engineering (PCCE)",
@@ -23,13 +35,14 @@ export default {
       Course: "BE (4yrs)",
     };
   },
-  methods:{
-      
-    apply(){
-       this.$router.push({name: "CollegeForm",
-          params: { email: this.loginemail }})
-    }
-  }
+  methods: {
+    apply() {
+      this.$router.push({
+        name: "CollegeForm",
+        params: { email: this.loginemail },
+      });
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

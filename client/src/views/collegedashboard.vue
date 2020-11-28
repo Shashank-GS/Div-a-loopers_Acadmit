@@ -3,7 +3,7 @@
     <Navbar></Navbar>
     <section>
       <h1>Enter your College Details</h1>
-      <form action="">
+      <form @submit.prevent="shift" action="">
         <div class="collegedetails">
           <div class="form-group">
             <label for="Cname">Name of College</label><br />
@@ -84,6 +84,11 @@ export default {
         Email: null,
       },
     };
+  },
+  methods: {
+    shift() {
+      this.$router.push("/StudentList");
+    },
   },
 };
 </script>

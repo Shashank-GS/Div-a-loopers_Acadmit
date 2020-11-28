@@ -259,31 +259,6 @@ export default {
   data() {
     return {
       show: false,
-<<<<<<< HEAD
-      loginemail: this.$route.params.email,
-      studentform: "",
-      // studentform: {
-      //   firstName: null,
-      //   lastName: null,
-      //   email: null,
-      //   age: null,
-      //   gender: null,
-      //   caste: null,
-      //   contactNo: null,
-      //   placeOfBirth: null,
-      //   dateOfBirth: null,
-      //   adhaarNo: null,
-      //   stream: null,
-      //   fatherName: null,
-      //   motherName: null,
-      //   guadianContactNo: null,
-      //     country: null,
-      //     state: null,
-      //     city: null,
-      //   resultHSSC: null,
-      //   resultSSC: null,
-      // },
-=======
       loginemail:this.$route.params.email, 
       studentform: {
         firstName: null, 
@@ -306,7 +281,6 @@ export default {
         resultHSSC: null,
         resultSSC: null,
       },
->>>>>>> 25d353c76c3bed1aacce5f3372311868f001150e
     };
   },
   mounted() {

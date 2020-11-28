@@ -6,8 +6,28 @@
       <div class="card">
         <div class="details">
           <h1>Name: {{ StudentName[0] }}</h1>
-          <h2>Rank: {{ Rank }}</h2>
-          <h3>Contact: {{ Contact }}</h3>
+          <h2>Rank: {{ Rank[0] }}</h2>
+          <h3>Contact: {{ Contact[0] }}</h3>
+        </div>
+        <div class="btn">
+          <button>View Details</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="details">
+          <h1>Name: {{ StudentName[1] }}</h1>
+          <h2>Rank: {{ Rank[1] }}</h2>
+          <h3>Contact: {{ Contact[1] }}</h3>
+        </div>
+        <div class="btn">
+          <button>View Details</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="details">
+          <h1>Name: {{ StudentName[2] }}</h1>
+          <h2>Rank: {{ Rank[2] }}</h2>
+          <h3>Contact: {{ Contact[2] }}</h3>
         </div>
         <div class="btn">
           <button>View Details</button>
@@ -18,7 +38,7 @@
   </div>
 </template>
 <script>
-import Navbar from "@/components/Navbar.vue";
+import Navbar from "@/components/Navbar 2.vue";
 import Footer from "@/components/footer.vue";
 
 export default {
@@ -29,9 +49,9 @@ export default {
   },
   data() {
     return {
-      StudentName: ["Rahul Prasad", "Lorem Ipsum"],
-      Rank: "45",
-      Contact: "9382328373",
+      StudentName: ["Rahul Prasad", "Lorem Ipsum", "Ram Kumar"],
+      Rank: ["45", "34", "23"],
+      Contact: ["9382328373", "3485384383", "9348343984"],
     };
   },
 };

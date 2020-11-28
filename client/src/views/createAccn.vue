@@ -2,7 +2,7 @@
   <div class="acc">
     <Navbar></Navbar>
     <section>
-      <h1>Welcome Lorem !</h1>
+      <h1>Welcome !</h1>
       <h2>Create an account to proceed further</h2>
       <button v-if="show == false" @click.prevent="showform">
         Create account
@@ -40,19 +40,39 @@
         <div class="studentdetails">
           <div class="form-group">
             <label for="firstName">First Name </label><br />
-            <input type="text" id="firstName" required v-model="studentform.firstName" />
+            <input
+              type="text"
+              id="firstName"
+              required
+              v-model="studentform.firstName"
+            />
           </div>
           <div class="form-group">
             <label for="lastName">Last name </label><br />
-            <input type="text" id="lastName" required v-model="studentform.lastName" />
+            <input
+              type="text"
+              id="lastName"
+              required
+              v-model="studentform.lastName"
+            />
           </div>
           <div class="form-group">
             <label for="email">Email </label><br />
-            <input type="email" id="email" required v-model="studentform.email" />
+            <input
+              type="email"
+              id="email"
+              required
+              v-model="studentform.email"
+            />
           </div>
           <div class="form-group">
             <label for="contactNo">Contact no.</label><br />
-            <input type="tel" id="contactNo" required v-model="studentform.contactNo" />
+            <input
+              type="tel"
+              id="contactNo"
+              required
+              v-model="studentform.contactNo"
+            />
           </div>
           <div class="form-group">
             <label for="age">Age </label><br />
@@ -104,15 +124,30 @@
           </div>
           <div class="form-group">
             <label for="placeOfBirth">Place Of Birth </label><br />
-            <input type="text" id="placeOfBirth" required v-model="studentform.placeOfBirth" />
+            <input
+              type="text"
+              id="placeOfBirth"
+              required
+              v-model="studentform.placeOfBirth"
+            />
           </div>
           <div class="form-group">
             <label for="dateOfBirth">Date Of Birth </label><br />
-            <input type="date" id="dateOfBirth" required v-model="studentform.dateOfBirth" />
+            <input
+              type="date"
+              id="dateOfBirth"
+              required
+              v-model="studentform.dateOfBirth"
+            />
           </div>
           <div class="form-group">
             <label for="adhaarNo">Adhaar No. </label><br />
-            <input type="text" id="adhaarNo" required v-model="studentform.adhaarNo" />
+            <input
+              type="text"
+              id="adhaarNo"
+              required
+              v-model="studentform.adhaarNo"
+            />
           </div>
         </div>
 
@@ -120,26 +155,51 @@
         <div class="guardiandetails">
           <div class="form-group">
             <label for="fatherName">Father's Name </label><br />
-            <input type="text" id="fatherNname" required v-model="studentform.fatherName" />
+            <input
+              type="text"
+              id="fatherNname"
+              required
+              v-model="studentform.fatherName"
+            />
           </div>
           <div class="form-group">
             <label for="motherName">Mother's Name </label><br />
-            <input type="text" id="motherName" required v-model="studentform.motherName" />
+            <input
+              type="text"
+              id="motherName"
+              required
+              v-model="studentform.motherName"
+            />
           </div>
           <div class="form-group">
             <label for="guardianContactNo">Contact no.</label><br />
-            <input type="tel" id="guardianContactNo" required v-model="studentform.guardianContactNo" />
+            <input
+              type="tel"
+              id="guardianContactNo"
+              required
+              v-model="studentform.guardianContactNo"
+            />
           </div>
         </div>
         <h1>Residential Details</h1>
         <div class="residentialdetails">
           <div class="form-group">
             <label for="country">Country</label><br />
-            <input type="text" id="country" required v-model="studentform.country" />
+            <input
+              type="text"
+              id="country"
+              required
+              v-model="studentform.country"
+            />
           </div>
           <div class="form-group">
             <label for="state">State</label><br />
-            <input type="text" id="state" required v-model="studentform.state" />
+            <input
+              type="text"
+              id="state"
+              required
+              v-model="studentform.state"
+            />
           </div>
           <div class="form-group">
             <label for="city">City</label><br />
@@ -160,11 +220,21 @@
           </div>
           <div class="form-group">
             <label for="resultHSSC">HSSC Percentage/CGPA</label><br />
-            <input type="text" id="resultHSCC" required v-model="studentform.resultHSSC" />
+            <input
+              type="text"
+              id="resultHSCC"
+              required
+              v-model="studentform.resultHSSC"
+            />
           </div>
           <div class="form-group">
             <label for="resultSSC">SSC Percentage/CGPA</label><br />
-            <input type="text" id="resultSSC" required v-model="studentform.resultSSC" />
+            <input
+              type="text"
+              id="resultSSC"
+              required
+              v-model="studentform.resultSSC"
+            />
           </div>
         </div>
         <hr />
@@ -182,7 +252,7 @@
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/footer.vue";
 
-import StudentService from '../StudentService'
+import StudentService from "../StudentService";
 
 export default {
   name: "createAccn",
@@ -194,7 +264,7 @@ export default {
     return {
       show: false,
       studentform: {
-        firstName: null, 
+        firstName: null,
         lastName: null,
         email: null,
         age: null,
@@ -208,31 +278,34 @@ export default {
         fatherName: null,
         motherName: null,
         guadianContactNo: null,
-          country: null,
-          state: null,
-          city: null,      
+        country: null,
+        state: null,
+        city: null,
         resultHSSC: null,
         resultSSC: null,
       },
     };
   },
   methods: {
-    async onCreateAccount () { 
+    async onCreateAccount() {
       try {
-        await StudentService.AddStudent(this.studentform) 
-        alert('Your account has been Created') 
-        // this.studentform = null; 
+        await StudentService.AddStudent(this.studentform);
+        alert("Your account has been Created");
+        this.$router.push({
+          name: "search",
+          params: { email: this.studentform.email },
+        });
+
+        // this.studentform = null;
       } catch (error) {
-        alert(error)
+        alert(error);
       }
     },
 
-    showform: function(){
-      this.show= true; 
-    }
-
-  }
-
+    showform: function () {
+      this.show = true;
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -340,7 +413,7 @@ input[type="date"] {
 #gender {
   padding-bottom: 5px;
 }
-option{
+option {
   font-size: 1rem;
 }
 </style>
