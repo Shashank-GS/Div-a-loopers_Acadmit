@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    "mongodb+srv://shashank:shashank@cluster0.eidtw.mongodb.net/aceddb?retryWrites=true&w=majority",
+    "input_your_mongodb_link_here",
     {
       useNewUrlParser: true,
       useCreateIndex: true,
